@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "ae5bc3a6-59c5-420e-bdf5-1e66fdc045ef",
+		"name": "LogosCorp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5161541"
+	},
+	"item": [
+		{
+			"name": "jsonusers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "zoho-auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://accounts.zoho.com/oauth/v2/token?refresh_token=1000.cbba2f30f37c54c1161bbaab692580ee.6fd93461c491bdb01e656ecf9481c386&client_id=1000.8DCM03JM5RJTKT1QXSWAFO7H6G04MO&client_secret=9e56e423985f453514f7d52ad17d25ebbc05a3d8d5&grant_type=refresh_token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"zoho",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"v2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "refresh_token",
+							"value": "1000.cbba2f30f37c54c1161bbaab692580ee.6fd93461c491bdb01e656ecf9481c386"
+						},
+						{
+							"key": "client_id",
+							"value": "1000.8DCM03JM5RJTKT1QXSWAFO7H6G04MO"
+						},
+						{
+							"key": "client_secret",
+							"value": "9e56e423985f453514f7d52ad17d25ebbc05a3d8d5"
+						},
+						{
+							"key": "grant_type",
+							"value": "refresh_token"
+						},
+						{
+							"key": "scope",
+							"value": "ZohoCRM.modules.ALL",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "zoho-create-user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1000.309e187d019d1337405898316ec20919.66545ab2d9d254c791d4b2c347629162",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Zoho-oauthtoken 1000.8cb99dxxxxxxxxxxxxx9be93.9b8xxxxxxxxxxxxxxxf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": [\n        {\n            \"Company\": \"ABC\",\n            \"Last_Name\": \"Daly\",\n            \"First_Name\": \"Paul 3\",\n            \"Email\": \"p.daly3@zylker.com\",\n            \"Mailing_Zip\":\"\",\n            \"Mailing_Street\": \"\",\n            \"Mailing_City\":\"\",\n            \"Phone\": \"\"   \n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.zohoapis.com/crm/v8/Contacts",
+					"protocol": "https",
+					"host": [
+						"www",
+						"zohoapis",
+						"com"
+					],
+					"path": [
+						"crm",
+						"v8",
+						"Contacts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
